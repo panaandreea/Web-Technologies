@@ -1,0 +1,17 @@
+class EvenSequence {
+    constructor(startValue) {
+        this.current = startValue % 2 === 0 ? startValue : startValue + 1;
+    }
+
+    next() {
+        const nextValue = this.current;
+        this.current += 2; 
+        return nextValue;
+    }
+}
+
+const evenNumbers = new EvenSequence(3); 
+
+for (let i = 0; i < 10; i++) {
+    console.log(evenNumbers.next());
+}
