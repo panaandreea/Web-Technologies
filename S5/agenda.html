@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda de contacte</title>
+  <script>
+    window.onload = () => {
+      const form = document.getElementById("form");
+      const tableBody = document.getElementById("tableBody");
+
+      form.onsubmit = (event) => {
+        event.preventDefault(); 
+
+        const nume = document.getElementById("nume").value.trim();
+        const telefon = document.getElementById("telefon").value.trim();
+
+        if (!nume || !telefon) {
+          alert("Completează ambele câmpuri!");
+          return;
+        }
+
+        const newRow = document.createElement("tr");
+        const nameCell = document.createElement("td");
+        const phoneCell = document.createElement("td");
+
+        nameCell.textContent = nume;
+        phoneCell.textContent = telefon;
+
+        newRow.appendChild(nameCell);
+        newRow.appendChild(phoneCell);
+        tableBody.appendChild(newRow);
+
+        // curățăm formularul
+        form.reset();
+      };
+    };
+  </script>
+</head>
+
+<body>
+  <h1>Agenda de Contacte</h1>
+
+  <table border="1" cellpadding="5">
+    <thead>
+      <tr>
+        <th>Nume</th>
+        <th>Telefon</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+
+  <h2>Adaugă contact nou</h2>
+  <form id="form">
+    <label>Nume:</label>
+    <input type="text" id="nume" required />
+    <label>Telefon:</label>
+    <input type="text" id="telefon" required />
+    <button type="submit">Adaugă</button>
+  </form>
+</body>
+</html>

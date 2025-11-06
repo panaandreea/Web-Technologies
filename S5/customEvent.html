@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Event Example</title>
+  <script>
+    window.onload = () => {
+      const button = document.getElementById("myBtn");
+
+      const customEvent = new Event("buttonClicked");
+
+      document.addEventListener("buttonClicked", () => {
+        console.log("🎯 Custom event triggered: buttonClicked");
+        alert("Eveniment personalizat detectat!");
+      });
+
+
+      button.addEventListener("click", () => {
+        console.log("🖱️ Butonul a fost apăsat!");
+        document.dispatchEvent(customEvent); 
+      });
+    };
+  </script>
+</head>
+<body>
+  <h2>Exemplu - Evenimente în Browser</h2>
+  <button id="myBtn">Apasă-mă!</button>
+</body>
+</html>
