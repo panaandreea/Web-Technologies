@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.board {
+    width: 300px;
+    height: 300px;
+    border: 4px solid #333;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: white;
+}
+
+/* Pentru un efect frumos */
+.cell:hover {
+    background-color: #dfe6e9;
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+    width: 40%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+th, td {
+    padding: 8px 16px;
+    border: 1px solid #000;
+}
+
+/* primul rand */
+tbody tr:first-child {
+    background-color: blue;
+    color: white;
+}
+
+/* randuri impare (2,4,6...) - violet */
+tbody tr:nth-child(odd) {
+    background-color: violet;
+}
+
+/* ultimul rand */
+tbody tr:last-child {
+    background-color: green;
+    color: white;
+}
+
+/* doar pentru frumos */
+th {
+    font-weight: bold;
+}
